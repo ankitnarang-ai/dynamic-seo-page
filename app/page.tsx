@@ -1,46 +1,97 @@
-import Link from "next/link";
-import { getAllCities, getAllServiceSlugs } from "@/lib/content";
+import type { Metadata } from "next";
+import { notFound } from "next/navigation";
+import {
+  getAllCities,
+  getAllServiceSlugs,
+  getNavServices,
+  getPageData,
+} from "@/lib/content";
 import { site } from "@/lib/site";
-import Container from "@/components/Container";
+import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import LogoStrip from "@/components/LogoStrip";
+import Section from "@/components/Section";
+import Footer from "@/components/Footer";
 
-// Minimal home / index — lists every service × city combination available from JSON,
-// so newly added services or cities appear here automatically.
+// The home page renders a real landing page directly (not an index of links).
+// It uses the first available service + first city as the default, and all
+// navigation happens through the navbar Services → cities dropdown.
+function getDefault(): { service: string; location: string } | null {
+  const slugs = getAllServiceSlugs();
+  const service = slugs.includes("virtual-reality") ? "virtual-reality" : slugs[0];
+  const location = Object.keys(getAllCities())[0];
+  if (!service || !location) return null;
+  return { service, location };
+}
+
+export async function generateMetadata(): Promise<Metadata> {
+  const def = getDefault();
+  const page = def && getPageData(def.service, def.location);
+  if (!page) return { title: site.name };
+
+  const { seo } = page.data;
+  const canonical = site.url;
+
+  return {
+    title: seo.metaTitle,
+    description: seo.metaDescription,
+    keywords: seo.keywords,
+    robots: seo.robots ?? "index, follow",
+    alternates: { canonical },
+    openGraph: {
+      title: seo.og?.title ?? seo.metaTitle,
+      description: seo.og?.description ?? seo.metaDescription,
+      url: canonical,
+      siteName: seo.og?.siteName ?? site.name,
+      type: "website",
+      images: seo.og?.image
+        ? [
+            {
+              url: seo.og.image,
+              width: seo.og.imageWidth ?? 1200,
+              height: seo.og.imageHeight ?? 630,
+              alt: seo.og?.title ?? seo.metaTitle,
+            },
+          ]
+        : undefined,
+    },
+    twitter: {
+      card: (seo.twitter?.card as "summary_large_image") ?? "summary_large_image",
+      title: seo.twitter?.title ?? seo.metaTitle,
+      description: seo.twitter?.description ?? seo.metaDescription,
+      images: seo.twitter?.image ? [seo.twitter.image] : undefined,
+    },
+  };
+}
+
 export default function Home() {
-  const services = getAllServiceSlugs();
-  const cities = Object.keys(getAllCities());
+  const def = getDefault();
+  const page = def && getPageData(def.service, def.location);
+  if (!page) notFound(); // no services/cities configured
+
+  const { data } = page;
+  const navServices = getNavServices();
 
   return (
-    <main className="flex-1 py-16">
-      <Container>
-        <h1 className="text-3xl font-extrabold tracking-tight sm:text-4xl">{site.name}</h1>
-        <p className="mt-3 max-w-xl text-base text-muted">
-          Dynamic, JSON-driven SEO landing pages. Every page below is rendered by a single
-          template from <code className="text-accent">/{"{service}"}/{"{location}"}</code>.
-        </p>
-
-        <div className="mt-10 space-y-10">
-          {services.map((service) => (
-            <section key={service}>
-              <h2 className="text-lg font-semibold capitalize">{service.replace(/-/g, " ")}</h2>
-              <ul className="mt-3 flex flex-wrap gap-2">
-                {cities.map((city) => (
-                  <li key={city}>
-                    <Link
-                      href={`/${service}/${city}`}
-                      className="inline-block rounded-full border border-border bg-surface px-4 py-1.5 text-sm text-foreground transition-colors hover:border-accent hover:text-accent"
-                    >
-                      /{service}/{city}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </section>
-          ))}
-          {services.length === 0 && (
-            <p className="text-sm text-muted">No services found in data/services.</p>
-          )}
-        </div>
-      </Container>
-    </main>
+    <>
+      <Header brand={site.name} services={navServices} />
+      <main>
+        <Hero hero={data.hero} />
+        <LogoStrip logos={data.logos} />
+        {(data.sections ?? []).map((section, i) => {
+          const theme = i % 2 === 0 ? "light" : "dark";
+          return (
+            <div
+              key={i}
+              data-theme={theme}
+              className="bg-background text-foreground transition-colors duration-300"
+            >
+              <Section section={section} />
+            </div>
+          );
+        })}
+      </main>
+      <Footer brand={site.name} />
+    </>
   );
 }

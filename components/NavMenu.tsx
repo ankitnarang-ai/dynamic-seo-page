@@ -10,7 +10,8 @@ import type { NavService } from "@/lib/types";
 // on the server and is passed in as a prop — nothing here is hardcoded.
 export default function NavMenu({ services }: { services: NavService[] }) {
   const pathname = usePathname();
-  const [desktopOpen, setDesktopOpen] = useState(false);
+  const [desktopServicesOpen, setDesktopServicesOpen] = useState(false);
+  const [desktopCaseOpen, setDesktopCaseOpen] = useState(false);
   const [activeService, setActiveService] = useState<string | null>(
     services[0]?.slug ?? null,
   );
@@ -18,22 +19,23 @@ export default function NavMenu({ services }: { services: NavService[] }) {
   const [mobileService, setMobileService] = useState<string | null>(null);
   const rootRef = useRef<HTMLDivElement>(null);
 
-  // Close both menus — called when a destination link is chosen.
   const closeAll = () => {
-    setDesktopOpen(false);
+    setDesktopServicesOpen(false);
+    setDesktopCaseOpen(false);
     setMobileOpen(false);
   };
 
-  // Close desktop menu on outside-click / Esc.
   useEffect(() => {
     function onClick(e: MouseEvent) {
       if (rootRef.current && !rootRef.current.contains(e.target as Node)) {
-        setDesktopOpen(false);
+        setDesktopServicesOpen(false);
+        setDesktopCaseOpen(false);
       }
     }
     function onKey(e: KeyboardEvent) {
       if (e.key === "Escape") {
-        setDesktopOpen(false);
+        setDesktopServicesOpen(false);
+        setDesktopCaseOpen(false);
         setMobileOpen(false);
       }
     }
@@ -49,51 +51,56 @@ export default function NavMenu({ services }: { services: NavService[] }) {
 
   return (
     <div ref={rootRef} className="flex items-center">
-      {/* ---------- Desktop (md+) ---------- */}
-      <nav className="hidden items-center gap-7 text-sm text-muted md:flex">
+      {/* ---------- Desktop Nav (md+) ---------- */}
+      <nav className="hidden items-center gap-6 text-[15px] font-medium text-[#1E293B] md:flex">
+        {/* Home Link */}
+        <Link href="/" className="transition-colors hover:text-black">
+          Home
+        </Link>
+
+        {/* Services Dropdown */}
         <div
           className="relative"
-          onMouseEnter={() => setDesktopOpen(true)}
-          onMouseLeave={() => setDesktopOpen(false)}
+          onMouseEnter={() => setDesktopServicesOpen(true)}
+          onMouseLeave={() => setDesktopServicesOpen(false)}
         >
           <button
             type="button"
             aria-haspopup="true"
-            aria-expanded={desktopOpen}
-            onClick={() => setDesktopOpen((v) => !v)}
-            onFocus={() => setDesktopOpen(true)}
-            className="flex items-center gap-1 transition-colors hover:text-foreground"
+            aria-expanded={desktopServicesOpen}
+            onClick={() => setDesktopServicesOpen((v) => !v)}
+            className="flex items-center gap-1.5 transition-colors hover:text-black"
           >
             Services
             <svg
-              className={`h-4 w-4 transition-transform ${desktopOpen ? "rotate-180" : ""}`}
+              className={`h-3.5 w-3.5 text-[#4B5563] transition-transform ${
+                desktopServicesOpen ? "rotate-180" : ""
+              }`}
               viewBox="0 0 20 20"
               fill="currentColor"
-              aria-hidden="true"
             >
               <path
                 fillRule="evenodd"
-                d="M5.3 7.3a1 1 0 011.4 0L10 10.6l3.3-3.3a1 1 0 111.4 1.4l-4 4a1 1 0 01-1.4 0l-4-4a1 1 0 010-1.4z"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
                 clipRule="evenodd"
               />
             </svg>
           </button>
 
-          {desktopOpen && services.length > 0 && (
-            <div className="absolute left-0 top-full z-50 pt-3">
-              <div className="grid w-[34rem] grid-cols-[13rem_1fr] overflow-hidden rounded-2xl border border-border/60 bg-surface shadow-2xl">
+          {desktopServicesOpen && services.length > 0 && (
+            <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
+              <div className="grid w-[34rem] grid-cols-[13rem_1fr] overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl text-slate-800">
                 {/* Service list */}
-                <ul className="border-r border-border/60 p-2">
+                <ul className="border-r border-slate-100 p-1 space-y-0.5">
                   {services.map((s) => (
                     <li key={s.slug}>
                       <button
                         type="button"
                         onMouseEnter={() => setActiveService(s.slug)}
-                        onFocus={() => setActiveService(s.slug)}
-                        className={`flex w-full items-center justify-between rounded-lg px-3 py-2 text-left text-sm transition-colors ${
+                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm font-medium transition-colors ${
                           active?.slug === s.slug
-                            ? "bg-surface-2 text-foreground"
-                            : "text-muted hover:bg-surface-2 hover:text-foreground"
+                            ? "bg-slate-100 text-purple-700"
+                            : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
                         }`}
                       >
                         {s.label}
@@ -103,12 +110,12 @@ export default function NavMenu({ services }: { services: NavService[] }) {
                   ))}
                 </ul>
 
-                {/* Cities submenu for the active service */}
+                {/* Cities submenu */}
                 <div className="p-2">
-                  <p className="px-3 py-2 text-xs font-semibold uppercase tracking-widest text-muted">
-                    {active?.label} — choose a city
+                  <p className="px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                    {active?.label} — Cities
                   </p>
-                  <ul className="grid grid-cols-2 gap-1">
+                  <ul className="grid grid-cols-2 gap-1 mt-1">
                     {active?.cities.map((c) => {
                       const href = `/${active.slug}/${c.slug}`;
                       const isActive = pathname === href;
@@ -117,10 +124,10 @@ export default function NavMenu({ services }: { services: NavService[] }) {
                           <Link
                             href={href}
                             onClick={closeAll}
-                            className={`block rounded-lg px-3 py-2 text-sm transition-colors ${
+                            className={`block rounded-lg px-3 py-1.5 text-sm transition-colors ${
                               isActive
-                                ? "bg-accent/15 text-accent"
-                                : "text-foreground/90 hover:bg-surface-2 hover:text-accent"
+                                ? "bg-purple-50 font-semibold text-purple-700"
+                                : "text-slate-600 hover:bg-slate-100 hover:text-purple-600"
                             }`}
                           >
                             {c.label}
@@ -135,21 +142,80 @@ export default function NavMenu({ services }: { services: NavService[] }) {
           )}
         </div>
 
-        <a href="#work" className="transition-colors hover:text-foreground">
-          Work
+        {/* Case Study Dropdown */}
+        <div
+          className="relative"
+          onMouseEnter={() => setDesktopCaseOpen(true)}
+          onMouseLeave={() => setDesktopCaseOpen(false)}
+        >
+          <button
+            type="button"
+            aria-haspopup="true"
+            aria-expanded={desktopCaseOpen}
+            onClick={() => setDesktopCaseOpen((v) => !v)}
+            className="flex items-center gap-1.5 transition-colors hover:text-black"
+          >
+            Case Study
+            <svg
+              className={`h-3.5 w-3.5 text-[#4B5563] transition-transform ${
+                desktopCaseOpen ? "rotate-180" : ""
+              }`}
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+
+          {desktopCaseOpen && (
+            <div className="absolute left-1/2 top-full z-50 -translate-x-1/2 pt-3">
+              <div className="w-56 rounded-2xl border border-slate-200 bg-white p-2 shadow-xl text-slate-800">
+                <Link
+                  href="#work"
+                  onClick={closeAll}
+                  className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-purple-700"
+                >
+                  Automotive VR Showcase
+                </Link>
+                <Link
+                  href="#work"
+                  onClick={closeAll}
+                  className="block rounded-xl px-4 py-2 text-sm font-medium text-slate-700 hover:bg-slate-100 hover:text-purple-700"
+                >
+                  Interactive Configurator
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {/* Portfolio */}
+        <a href="#work" className="transition-colors hover:text-black">
+          Portfolio
         </a>
-        <a href="#contact" className="transition-colors hover:text-foreground">
-          Contact
+
+        {/* About Us */}
+        <a href="#about" className="transition-colors hover:text-black">
+          About Us
+        </a>
+
+        {/* Contact Us */}
+        <a href="#contact" className="transition-colors hover:text-black">
+          Contact Us
         </a>
       </nav>
 
-      {/* ---------- Mobile (< md) ---------- */}
+      {/* ---------- Mobile Trigger (< md) ---------- */}
       <button
         type="button"
         aria-label="Toggle menu"
         aria-expanded={mobileOpen}
         onClick={() => setMobileOpen((v) => !v)}
-        className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-lg border border-border text-foreground"
+        className="md:hidden inline-flex h-9 w-9 items-center justify-center rounded-full bg-[#0B0F19] text-white"
       >
         <svg className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
           {mobileOpen ? (
@@ -161,29 +227,33 @@ export default function NavMenu({ services }: { services: NavService[] }) {
       </button>
 
       {mobileOpen && (
-        <div className="absolute inset-x-0 top-16 z-40 border-b border-border/60 bg-background md:hidden">
-          <ul className="mx-auto max-w-6xl px-5 py-4 sm:px-6">
+        <div className="absolute inset-x-4 top-20 z-50 rounded-2xl border border-slate-200 bg-white p-5 shadow-2xl text-slate-900 md:hidden">
+          <ul className="space-y-2">
+            <li>
+              <Link href="/" onClick={closeAll} className="block py-2 text-base font-semibold">
+                Home
+              </Link>
+            </li>
             {services.map((s) => {
               const open = mobileService === s.slug;
               return (
-                <li key={s.slug} className="border-b border-border/40 last:border-0">
+                <li key={s.slug} className="border-t border-slate-100 pt-2">
                   <button
                     type="button"
-                    aria-expanded={open}
                     onClick={() => setMobileService(open ? null : s.slug)}
-                    className="flex w-full items-center justify-between py-3 text-left text-sm font-medium"
+                    className="flex w-full items-center justify-between py-2 text-left text-base font-semibold"
                   >
                     {s.label}
                     <span className={`transition-transform ${open ? "rotate-45" : ""}`}>+</span>
                   </button>
                   {open && (
-                    <ul className="grid grid-cols-2 gap-1 pb-3">
+                    <ul className="grid grid-cols-2 gap-1.5 pb-2 pt-1">
                       {s.cities.map((c) => (
                         <li key={c.slug}>
                           <Link
                             href={`/${s.slug}/${c.slug}`}
                             onClick={closeAll}
-                            className="block rounded-lg px-3 py-2 text-sm text-muted hover:bg-surface hover:text-accent"
+                            className="block rounded-lg px-3 py-1.5 text-sm text-slate-600 hover:bg-slate-100 hover:text-purple-600"
                           >
                             {c.label}
                           </Link>
@@ -194,6 +264,21 @@ export default function NavMenu({ services }: { services: NavService[] }) {
                 </li>
               );
             })}
+            <li className="border-t border-slate-100 pt-2">
+              <a href="#work" onClick={closeAll} className="block py-2 text-base font-semibold">
+                Portfolio
+              </a>
+            </li>
+            <li>
+              <a href="#about" onClick={closeAll} className="block py-2 text-base font-semibold">
+                About Us
+              </a>
+            </li>
+            <li>
+              <a href="#contact" onClick={closeAll} className="block py-2 text-base font-semibold">
+                Contact Us
+              </a>
+            </li>
           </ul>
         </div>
       )}

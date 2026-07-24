@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Outfit } from "next/font/google";
+import { Inter_Tight } from "next/font/google";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const outfit = Outfit({
-  variable: "--font-sans",
+const interTight = Inter_Tight({
+  variable: "--font-inter-tight",
   subsets: ["latin"],
 });
 
@@ -36,7 +36,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${outfit.variable} h-full antialiased`}
+      className={`${interTight.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col font-sans">
         <script

@@ -5,15 +5,15 @@
     "titlePrefix": "Virtual Showroom Development ",
     "highlight": "for Automotive Industry",
     "titleSuffix": " in {city}",
-    "description": "Businesses in {city} are rapidly moving towards immersive digital experiences to attract modern customers. Virtual Showroom Development for the automotive industry is helping brands present their offerings more engagingly and interactively.",
-    "image": "/images/vr-hero.svg",
+    "description": "Businesses in {city} are rapidly moving towards immersive digital experiences to attract modern customers. Virtual Showroom Development for Automotive Industry is helping brands present their offerings more engagingly and interactively. In a fast growing market like {city}, companies are looking for smarter ways to stand out and connect with digitally active audiences.",
+    "image": "/images/vr-hero-showroom.png",
     "imageAlt": "Isometric virtual automotive showroom for {city}",
     "bullets": [
-      "Straightforward digital presence for businesses in {city}",
-      "Enable interactive product exploration for customers in {city}",
-      "Reduce dependency on expensive physical setups",
-      "Have brands stand out in the competitive {country} market",
-      "Increase customer engagement and decision making"
+      "Strengthens digital presence for businesses across {city}.",
+      "Enables interactive product exploration for customers in {city}.",
+      "Reduces dependency on expensive physical setups in {city}.",
+      "Helps brands stand out in the competitive {city} market.",
+      "Improves customer engagement and decision-making."
     ],
     "ctas": [
       { "label": "Schedule a call", "href": "#contact", "variant": "primary" },
@@ -21,67 +21,74 @@
     ]
   },
   "logos": {
-    "heading": "Trusted by industry leaders",
+    "heading": "",
     "items": [
-      { "src": "/logos/vaseline.svg", "alt": "Vaseline" },
-      { "src": "/logos/coca-cola.svg", "alt": "Coca-Cola" },
-      { "src": "/logos/ogilvy.svg", "alt": "Ogilvy" },
-      { "src": "/logos/pepsi.svg", "alt": "Pepsi" },
-      { "src": "/logos/nestle.svg", "alt": "Nestle" }
+      { "src": "/brands/Bajaj_Finserv_Logo 1.svg", "alt": "Bajaj Finserv" },
+      { "src": "/brands/796-7966191_vaseline-logo-black-and-white-html5-icon-png 1.svg", "alt": "Vaseline" },
+      { "src": "/brands/248-2486695_iskcon-of-richmond-lotous-feet-of-radha-krishna 2.svg", "alt": "Lotus" },
+      { "src": "/brands/2bfc6af0-3f56-456c-811b-dbfd54bd0cf8.svg", "alt": "Stripto" },
+      { "src": "/brands/Black Creative Professional Photographer Online Portfolio (1) 1.svg", "alt": "Coca-Cola" },
+      { "src": "/brands/Untitled design (25) 1.svg", "alt": "Philips" },
+      { "src": "/brands/Untitled design (25) 3.svg", "alt": "Ogilvy" },
+      { "src": "/brands/Untitled design (52) 4.svg", "alt": "Dainik Jagran" }
     ]
   },
   "sections": [
     {
       "type": "text-media",
       "heading": "Virtual Showroom Development in {city}",
-      "body": "Virtual Showroom Development in {city} is changing how businesses present their offerings and engage with customers. As firms continue to grow on a base of powerful and interactive technologies, an immersive showroom empowers brands in {city} to showcase their products online in ways that reach and interact with every prospective customer.",
-      "image": "/images/vr-industries.svg",
+      "body": "Virtual Showroom Development in {city} is changing how businesses present their offerings and engage with customers. As {city} continues to grow as a major business and technology hub, companies are focusing on innovative ways to reach their audience. A virtual showroom allows businesses in {city} to showcase products and services in a visually rich and interactive environment without the limitations of physical space.\n\nFor industries like the Automotive Industry, this shift is especially valuable in {city}, where customer expectations are evolving quickly. Buyers in {city} now prefer convenience, flexibility, and detailed information before making decisions. Virtual Showroom Development for the Automotive Industry supports this behavior by offering a platform where users can explore offerings anytime, from anywhere.\n\nThis approach not only improves accessibility but also helps businesses in {city} expand their reach beyond traditional boundaries. With digital-first strategies becoming common in {city}, virtual showrooms are playing a key role in enhancing brand perception and customer trust.",
+      "image": "/images/vr-industries-hub.png",
       "imageAlt": "Industries served by virtual showrooms in {city}"
     },
     {
       "type": "card-grid",
-      "heading": "Importance of Virtual Showroom for the Automotive Industry",
+      "heading": "Importance of Virtual Showroom for Automotive Industry",
       "cards": [
-        { "title": "Immersive experience", "description": "Helps customers explore multiple vehicle models in {city} without visiting a physical showroom." },
-        { "title": "Detailed visualization", "description": "Allows detailed visualization of interiors, features, and specifications." },
-        { "title": "Lower physical cost", "description": "Reduces the need for large physical automotive spaces." },
-        { "title": "Wider reach", "description": "Enables automotive brands to provide personalized and immersive experiences." },
-        { "title": "Stronger engagement", "description": "Improves customer engagement through interactive virtual walkthroughs." },
-        { "title": "Faster decisions", "description": "Speeds up the decision-making process with better product clarity." }
+        { "title": "01", "description": "Helps customers explore multiple vehicle models in 3D without visiting a physical showroom" },
+        { "title": "02", "description": "Allows detailed visualization of interiors, features, and specifications" },
+        { "title": "03", "description": "Reduces the need for large physical showroom spaces" },
+        { "title": "04", "description": "Enables automotive brands to provide personalized and immersive experiences" },
+        { "title": "05", "description": "Improves customer engagement through interactive virtual walkthroughs" },
+        { "title": "06", "description": "Supports remote buying decisions with better accessibility" },
+        { "title": "07", "description": "Speeds up the decision-making process with better product clarity" },
+        { "title": "08", "description": "Enhances brand positioning with modern and innovative digital experiences" }
       ]
     },
     {
       "type": "process",
       "heading": "Our Virtual Showroom Development Process",
       "steps": [
-        { "no": "01", "title": "Requirement Analysis", "description": "Understanding goals and audience in {city}." },
-        { "no": "02", "title": "Concept Design", "description": "Defining the visual concept and flow." },
-        { "no": "03", "title": "3D Modeling", "description": "Building realistic 3D vehicle assets." },
-        { "no": "04", "title": "Scene Building", "description": "Assembling the immersive environment." },
-        { "no": "05", "title": "Interaction Design", "description": "Adding walkthroughs and hotspots." },
-        { "no": "06", "title": "Integration", "description": "Connecting to your website and systems." },
-        { "no": "07", "title": "Testing", "description": "Cross-device and performance testing." },
-        { "no": "08", "title": "Launch", "description": "Deploying the showroom to production." },
-        { "no": "09", "title": "Maintenance", "description": "Ongoing support and enhancements." }
+        { "no": "01", "title": "Initial Consultation", "description": "Defining goals and scope of the virtual environment." },
+        { "no": "02", "title": "Conceptualization", "description": "Visual storyboard and architectural planning." },
+        { "no": "03", "title": "3D Modeling", "description": "Crafting high-fidelity digital twins of products." },
+        { "no": "04", "title": "Texture & Lighting", "description": "Applying realistic materials and ambient lighting." },
+        { "no": "05", "title": "Interactive Design", "description": "Programming user interactions and navigation." },
+        { "no": "06", "title": "Integration", "description": "Backend connection and platform optimization." },
+        { "no": "07", "title": "Testing", "description": "Rigorous QA across all devices and browsers." },
+        { "no": "08", "title": "Launch", "description": "Final deployment and user onboarding." },
+        { "no": "09", "title": "Maintenance", "description": "Continuous updates and analytics monitoring." }
       ]
     },
     {
       "type": "callout",
-      "heading": "How Virtual Reality Adds Value to the Automotive Industry",
-      "body": "Virtual Reality is transforming the automotive industry in {city} by offering immersive and interactive experiences to customers. It allows users to explore vehicles in a detailed virtual environment, helping them understand features, design, and functionality more clearly. This technology reduces the need for physical visits while improving convenience and accessibility."
+      "heading": "How Virtual Reality Adds Value To Automotive Industry",
+      "body": "Virtual Reality is transforming the Automotive Industry by offering immersive and interactive experiences to customers. It allows users to explore vehicles in a detailed virtual environment, helping them understand features, design, and functionality more clearly. This technology reduces the need for physical visits while improving convenience and accessibility. It also enhances customer engagement by providing a realistic feel of the product. As a result, automotive brands can build stronger connections with buyers, improve decision-making, and deliver a modern, technology-driven experience that meets evolving customer expectations."
     },
     {
       "type": "card-grid",
-      "heading": "Why Choose Us for Virtual Showroom Development",
+      "heading": "Why Choose Abhiwan for Virtual Showroom Development",
       "cards": [
-        { "title": "Local Insight", "description": "Deep understanding of the {city} market and its audience." },
-        { "title": "Proven Expertise", "description": "Years of experience delivering immersive experiences." },
-        { "title": "User First", "description": "Designs built around customer needs and clarity." },
-        { "title": "Advanced Tech", "description": "Latest real-time 3D and WebXR toolchains." },
-        { "title": "Tailored", "description": "Solutions shaped to each brand's identity." },
-        { "title": "On Time", "description": "Reliable delivery on committed timelines." },
-        { "title": "End to End", "description": "From concept to launch and beyond." },
-        { "title": "Always On", "description": "Ongoing support and maintenance." }
+        { "title": "Proven Expertise", "description": "Proven expertise in Virtual Showroom Development solutions." },
+        { "title": "Local Insight", "description": "Deep understanding of business environments in {city}." },
+        { "title": "User-First", "description": "Focus on creating user-friendly and interactive platforms." },
+        { "title": "Industry Fit", "description": "Experience in working with industries like Automotive Industry." },
+        { "title": "Advanced Tech", "description": "Use of advanced technologies such as 3D and VR." },
+        { "title": "Tailored", "description": "Customized solutions tailored for businesses in {city}." },
+        { "title": "High Standards", "description": "High-quality design and development standards." },
+        { "title": "On Time", "description": "Timely delivery for projects across {city}." },
+        { "title": "Always On", "description": "Strong support and maintenance services." },
+        { "title": "End to End", "description": "Dedicated team for end-to-end development." }
       ]
     },
     {
@@ -89,42 +96,45 @@
       "heading": "Selected Work",
       "subheading": "What we've built for studios and enterprises.",
       "items": [
-        { "src": "/work/showroom-1.svg", "alt": "Virtual automotive showroom project" },
-        { "src": "/work/showroom-2.svg", "alt": "Immersive VR product configurator" },
-        { "src": "/work/showroom-3.svg", "alt": "Interactive vehicle walkthrough" },
-        { "src": "/work/showroom-4.svg", "alt": "360-degree showroom experience" }
+        { "src": "/images/Skyline Protocol.svg", "alt": "Skyline Protocol - 3D Virtual Automotive Showroom" },
+        { "src": "/images/game.svg", "alt": "Game - Metaverse Interactive Avatar Hub" },
+        { "src": "/images/roob.svg", "alt": "Roob - VR Electronics & Retail Showroom" },
+        { "src": "/images/Article.svg", "alt": "Article - AR VR Interactive Product Display Table" },
+        { "src": "/images/studio.svg", "alt": "Studio - Coin Dome 3D Virtual City Environment" }
       ]
     },
     {
       "type": "testimonials",
-      "heading": "Quietly trusted by the world's most demanding teams.",
+      "heading": "Quietly trusted by some of the world's most demanding teams.",
       "items": [
-        { "name": "Product Lead", "role": "Automotive Brand, {city}", "quote": "Immersive delivery in {city} exceeded our expectations. The results speak for themselves." },
-        { "name": "Marketing Head", "role": "Retail Group", "quote": "Their work on our virtual showroom was flawless — every detail felt intentional." },
-        { "name": "Founder", "role": "Consumer Startup", "quote": "It re-architected our education on VR and shipped a flawless immersive experience in {city}." }
+        { "name": "", "role": "VP Innovation, Fortune 100 retailer", "quote": "Abhiwan delivered a Vision Pro experience our internal team thought was years away. The fidelity is genuinely best-in-class." },
+        { "name": "", "role": "Studio Director, AAA publisher", "quote": "From technical art to netcode — every senior we worked with raised the bar. Our launch metrics speak for themselves." },
+        { "name": "", "role": "Head of Training, Global airline", "quote": "They re-architected our simulator on UE5 and shipped a flawless build to 14 markets in six months." }
       ]
     },
     {
       "type": "cta-form",
       "heading": "Let's build the future of interactive experiences.",
-      "subheading": "Tell us about your product. A senior architect will respond within one business day with a demo plan.",
+      "subheading": "Tell us about your product. A senior architect will respond within one business day with a tailored plan, timeline and team.",
       "fields": [
-        { "name": "name", "label": "Your name", "type": "text", "placeholder": "Jane Doe" },
-        { "name": "email", "label": "Work email", "type": "email", "placeholder": "jane@company.com" },
-        { "name": "company", "label": "Company", "type": "text", "placeholder": "Company name" },
-        { "name": "message", "label": "About your project", "type": "textarea", "placeholder": "Tell us what you want to build" }
+        { "name": "firstName", "label": "First name", "type": "text", "placeholder": "First name" },
+        { "name": "lastName", "label": "Last name", "type": "text", "placeholder": "Last name" },
+        { "name": "email", "label": "Work email", "type": "email", "placeholder": "Work email" },
+        { "name": "company", "label": "Company", "type": "text", "placeholder": "Company" },
+        { "name": "message", "label": "What are you building?", "type": "textarea", "placeholder": "What are you building?" }
       ],
       "submitLabel": "Request a conversation"
     },
     {
       "type": "faqs",
       "heading": "Frequently asked.",
+      "subheading": "Can't find what you're looking for? Talk to our team.",
       "items": [
-        { "q": "Can Virtual Showroom Development help businesses in {city} reach more customers?", "a": "Yes. An immersive showroom lets brands in {city} reach customers anywhere, at any time, without a physical space." },
-        { "q": "Why is Virtual Showroom Development for the Automotive Industry important in {city}?", "a": "It lets automotive brands present vehicles interactively, reducing cost while improving customer decision-making." },
-        { "q": "Is Virtual Showroom Development suitable for growing markets like {city}?", "a": "Absolutely — it is an efficient way to scale presence and engagement in fast-growing markets." },
-        { "q": "How do customers in {city} benefit from virtual showrooms in the Automotive Industry?", "a": "They explore models, features, and specifications in rich detail from anywhere on any device." },
-        { "q": "Do businesses in {city} need technical expertise to manage virtual showrooms?", "a": "No. We deliver an end-to-end solution and provide ongoing support and maintenance." }
+        { "q": "Can Virtual Showroom Development help Automotive Industry reach more customers in {city}?", "a": "Yes. An immersive showroom lets automotive brands in {city} reach customers anywhere, at any time, without physical spatial limitations." },
+        { "q": "Why is Virtual Showroom Development for Automotive Industry important in {city}?", "a": "It lets automotive brands present vehicles interactively, reducing physical showroom costs while improving customer decision-making." },
+        { "q": "Is Virtual Showroom Development suitable for growing markets like {city}?", "a": "Absolutely — it is an efficient way to scale presence and engagement in fast-growing business markets." },
+        { "q": "How do customers in {city} benefit from virtual showrooms in Automotive Industry?", "a": "They explore vehicle models, 3D interiors, and specifications in rich detail from anywhere on any device." },
+        { "q": "Do businesses in {city} need technical expertise to manage virtual showrooms?", "a": "No. We deliver an end-to-end managed solution and provide continuous ongoing support and maintenance." }
       ]
     }
   ],

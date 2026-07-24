@@ -1,0 +1,14 @@
+<svg width="58" height="36" viewBox="6 0 66 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="24" y="2" width="46" height="46" rx="10" stroke="#8E44AD" stroke-width="3" fill="none"/>
+  <path d="M8 38L28 10H38L24 38H8Z" fill="url(#grad)"/>
+  <path d="M33 10H43L55 38H45L37 20L33 10Z" fill="url(#grad)"/>
+  <path d="M45 10H54L68 38H58L50 20L45 10Z" fill="url(#grad)"/>
+  <text x="47" y="44" text-anchor="middle" fill="#8E44AD" font-size="6.5" font-weight="900" letter-spacing="1.2" font-family="system-ui, sans-serif">ABHIWAN</text>
+  <defs>
+    <linearGradient id="grad" x1="8" y1="10" x2="68" y2="38" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C084FC"/>
+      <stop offset="0.5" stop-color="#8E44AD"/>
+      <stop offset="1" stop-color="#732D91"/>
+    </linearGradient>
+  </defs>
+</svg>

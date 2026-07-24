@@ -1,36 +1,46 @@
 import type { Section } from "@/lib/types";
 import Container from "../Container";
-import SafeImage from "../SafeImage";
-import SectionHeading from "./SectionHeading";
 
 type Data = Extract<Section, { type: "testimonials" }>;
 
 export default function Testimonials({ data }: { data: Data }) {
   if (!data.items || data.items.length === 0) return null;
+
   return (
-    <section className="py-20">
+    <section className="py-16 md:py-24 bg-[#FAFBFD] text-slate-900">
       <Container>
-        <SectionHeading heading={data.heading} subheading={data.subheading} />
-        <div className="mt-12 grid gap-6 md:grid-cols-3">
+        {/* Subtitle / Badge */}
+        <div className="mb-6 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
+          CLIENT VOICES
+        </div>
+
+        {/* Heading */}
+        <h2 className="text-[32px] sm:text-[42px] lg:text-[48px] font-bold text-[#0F172A] leading-[1.15] tracking-[-1.2px] max-w-3xl mb-14">
+          {data.heading}
+        </h2>
+
+        {/* 3 Testimonial Cards */}
+        <div className="grid gap-6 md:grid-cols-3">
           {data.items.map((t, i) => (
-            <figure key={i} className="relative rounded-2xl border border-border bg-surface p-8 shadow-sm transition-transform hover:-translate-y-1 overflow-hidden">
-              <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-accent to-accent-strong" />
-              <blockquote className="text-base leading-relaxed text-foreground/90">
-                &ldquo;{t.quote}&rdquo;
+            <figure
+              key={i}
+              className="group relative flex flex-col justify-between min-h-[250px] rounded-[28px] bg-[#EEECF5]/80 p-8 border border-purple-100/60 shadow-sm transition-all duration-300 hover:scale-[1.01] hover:shadow-md"
+            >
+              {/* Quote Mark Watermark */}
+              <div className="text-6xl font-serif text-slate-300/40 select-none absolute top-4 left-6 leading-none pointer-events-none">
+                “
+              </div>
+
+              {/* Quote Body */}
+              <blockquote className="text-[15px] font-normal leading-[1.7] text-[#334155] relative z-10 pt-4">
+                {t.quote}
               </blockquote>
-              <figcaption className="mt-8 flex items-center gap-4">
-                {t.avatar && (
-                  <SafeImage
-                    src={t.avatar}
-                    alt={t.avatarAlt ?? t.name}
-                    width={48}
-                    height={48}
-                    className="h-12 w-12 rounded-full object-cover"
-                  />
-                )}
-                <div>
-                  <div className="text-base font-semibold">{t.name}</div>
-                  <div className="text-sm text-muted">{t.role}</div>
+
+              {/* Author / Role Footer */}
+              <figcaption className="mt-8 border-t border-slate-300/40 pt-5 relative z-10">
+                <div className="flex items-center gap-2.5 text-xs font-semibold text-slate-600">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#C084FC]" />
+                  <span>{t.role || t.name}</span>
                 </div>
               </figcaption>
             </figure>

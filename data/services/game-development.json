@@ -20,11 +20,16 @@
     ]
   },
   "logos": {
-    "heading": "Trusted by studios worldwide",
+    "heading": "",
     "items": [
-      { "src": "/logos/studio-a.svg", "alt": "Studio A" },
-      { "src": "/logos/studio-b.svg", "alt": "Studio B" },
-      { "src": "/logos/studio-c.svg", "alt": "Studio C" }
+      { "src": "/brands/Bajaj_Finserv_Logo 1.svg", "alt": "Bajaj Finserv" },
+      { "src": "/brands/796-7966191_vaseline-logo-black-and-white-html5-icon-png 1.svg", "alt": "Vaseline" },
+      { "src": "/brands/248-2486695_iskcon-of-richmond-lotous-feet-of-radha-krishna 2.svg", "alt": "Lotus" },
+      { "src": "/brands/2bfc6af0-3f56-456c-811b-dbfd54bd0cf8.svg", "alt": "Stripto" },
+      { "src": "/brands/Black Creative Professional Photographer Online Portfolio (1) 1.svg", "alt": "Coca-Cola" },
+      { "src": "/brands/Untitled design (25) 1.svg", "alt": "Philips" },
+      { "src": "/brands/Untitled design (25) 3.svg", "alt": "Ogilvy" },
+      { "src": "/brands/Untitled design (52) 4.svg", "alt": "Dainik Jagran" }
     ]
   },
   "sections": [
