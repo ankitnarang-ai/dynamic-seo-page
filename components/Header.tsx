@@ -18,11 +18,11 @@ export default function Header({
           {/* Brand / Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/logos/union-logo.svg"
+              src="/logos/Link.svg"
               alt={brand || "Abhiwan"}
-              width={58}
-              height={36}
-              className="w-[58.1px] h-[35.76px] object-contain transition-transform hover:scale-105"
+              width={76}
+              height={46}
+              className="h-10 sm:h-12 w-auto object-contain transition-transform hover:scale-105"
               priority
             />
           </Link>
