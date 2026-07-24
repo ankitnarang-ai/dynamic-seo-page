@@ -1,0 +1,114 @@
+{
+  "slug": "game-development",
+  "label": "Game Development",
+  "hero": {
+    "titlePrefix": "Top ",
+    "highlight": "Game Development",
+    "titleSuffix": " Company in {city}",
+    "description": "We build immersive, high-performance games for studios and brands in {city} — from concept and art to launch and live-ops across mobile, PC, and console.",
+    "image": "/images/game-dev-hero.svg",
+    "imageAlt": "Game development studio serving {city}",
+    "bullets": [
+      "Full-cycle game development for teams in {city}",
+      "Mobile, PC, console and cross-platform builds",
+      "Original art, animation and 3D asset pipelines",
+      "Multiplayer, backend and live-ops engineering"
+    ],
+    "ctas": [
+      { "label": "Get a Quote", "href": "#contact", "variant": "primary" },
+      { "label": "View our work", "href": "#services", "variant": "ghost" }
+    ]
+  },
+  "logos": {
+    "heading": "Trusted by studios worldwide",
+    "items": [
+      { "src": "/logos/studio-a.svg", "alt": "Studio A" },
+      { "src": "/logos/studio-b.svg", "alt": "Studio B" },
+      { "src": "/logos/studio-c.svg", "alt": "Studio C" }
+    ]
+  },
+  "sections": [
+    {
+      "type": "card-grid",
+      "heading": "Why studios in {city} choose us",
+      "cards": [
+        { "title": "Full-cycle delivery", "description": "From prototype to launch — one accountable team." },
+        { "title": "Cross-platform", "description": "Ship to mobile, PC and console from a single codebase." },
+        { "title": "Art that ships", "description": "In-house 2D/3D art and animation pipelines." },
+        { "title": "Live-ops ready", "description": "Backend, analytics and events built to scale in {country}." },
+        { "title": "Performance first", "description": "Tuned for smooth frame rates on real devices." },
+        { "title": "Transparent process", "description": "Clear milestones and demos every sprint." }
+      ]
+    },
+    {
+      "type": "process",
+      "heading": "Our Game Development Process",
+      "steps": [
+        { "no": "01", "title": "Discovery", "description": "Scope, platforms and target audience in {city}." },
+        { "no": "02", "title": "Prototype", "description": "Playable core loop, fast." },
+        { "no": "03", "title": "Production", "description": "Art, systems and content build-out." },
+        { "no": "04", "title": "QA", "description": "Device testing and performance tuning." },
+        { "no": "05", "title": "Launch", "description": "Store submission and release." },
+        { "no": "06", "title": "Live-ops", "description": "Events, updates and analytics." }
+      ]
+    },
+    {
+      "type": "callout",
+      "heading": "Games that players in {city} keep coming back to",
+      "body": "Great games are built on tight loops, readable art and reliable tech. We pair senior engineering with a dedicated art team so studios in {city} can ship polished titles on time and iterate with confidence after launch."
+    },
+    {
+      "type": "testimonials",
+      "heading": "What our clients say.",
+      "items": [
+        { "name": "Studio Director", "role": "Mobile Publisher, {city}", "quote": "They delivered a polished title on schedule and stayed on for live-ops. Exceptional team." },
+        { "name": "Producer", "role": "Indie Studio", "quote": "The art and engineering quality raised our whole product." }
+      ]
+    },
+    {
+      "type": "cta-form",
+      "heading": "Let's build your next game.",
+      "subheading": "Tell us about your project and we'll get back within one business day.",
+      "fields": [
+        { "name": "name", "label": "Your name", "type": "text", "placeholder": "Jane Doe" },
+        { "name": "email", "label": "Work email", "type": "email", "placeholder": "jane@studio.com" },
+        { "name": "message", "label": "About your game", "type": "textarea", "placeholder": "Genre, platforms, timeline" }
+      ],
+      "submitLabel": "Request a quote"
+    },
+    {
+      "type": "faqs",
+      "heading": "Frequently asked.",
+      "items": [
+        { "q": "Do you work with studios in {city}?", "a": "Yes — we partner with teams in {city} and across {country}, remotely and on-site." },
+        { "q": "Which platforms do you support?", "a": "Mobile (iOS/Android), PC, console and cross-platform builds." },
+        { "q": "Can you take over an existing project?", "a": "Yes. We regularly rescue and complete in-progress titles." }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "Best Game Development Services 2026",
+    "metaDescription": "Check the best game development company in {city}. We build immersive mobile, PC and console games for studios and teams in {city}.",
+    "keywords": [
+      "game development companies in {city}",
+      "mobile game development in {city}",
+      "console game studio {country}"
+    ],
+    "robots": "index, follow",
+    "canonical": "https://yoursite.com/game-development/{city}",
+    "og": {
+      "title": "Best Game Development Services 2026",
+      "description": "Immersive mobile, PC and console games for modern studios.",
+      "image": "/og/game-development.svg",
+      "imageWidth": 1200,
+      "imageHeight": 630,
+      "siteName": "Immersive Studio"
+    },
+    "twitter": {
+      "card": "summary_large_image",
+      "title": "Best Game Development Services 2026",
+      "description": "Immersive mobile, PC and console games for modern studios.",
+      "image": "/og/game-development.svg"
+    }
+  }
+}

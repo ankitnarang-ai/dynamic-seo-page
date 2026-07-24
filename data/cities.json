@@ -1,0 +1,7 @@
+{
+  "noida": { "label": "Noida", "country": "India", "locale": "en-IN" },
+  "mumbai": { "label": "Mumbai", "country": "India", "locale": "en-IN" },
+  "india": { "label": "India", "country": "India", "locale": "en-IN" },
+  "busan": { "label": "Busan", "country": "South Korea", "locale": "ko-KR" },
+  "dubai": { "label": "Dubai", "country": "United Arab Emirates", "locale": "ar-AE" }
+}
