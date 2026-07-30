@@ -47,6 +47,15 @@ export default function NavMenu({ services }: { services: NavService[] }) {
     };
   }, []);
 
+  useEffect(() => {
+    if (!pathname) return;
+    const currentSlug = pathname.split("/")[1];
+    if (currentSlug) {
+      const match = services.find((s) => s.slug === currentSlug);
+      if (match) setActiveService(match.slug);
+    }
+  }, [pathname, services]);
+
   const active = services.find((s) => s.slug === activeService) ?? services[0];
 
   return (
@@ -92,22 +101,27 @@ export default function NavMenu({ services }: { services: NavService[] }) {
               <div className="grid w-[34rem] grid-cols-[13rem_1fr] overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-2xl text-slate-800">
                 {/* Service list */}
                 <ul className="border-r border-slate-100 p-1 space-y-0.5">
-                  {services.map((s) => (
-                    <li key={s.slug}>
-                      <button
-                        type="button"
-                        onMouseEnter={() => setActiveService(s.slug)}
-                        className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm font-medium transition-colors ${
-                          active?.slug === s.slug
-                            ? "bg-slate-100 text-purple-700"
-                            : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
-                        }`}
-                      >
-                        {s.label}
-                        <span aria-hidden="true">›</span>
-                      </button>
-                    </li>
-                  ))}
+                  {services.map((s) => {
+                    const firstCity = s.cities[0]?.slug ?? "noida";
+                    const isCurrentCategory = pathname.startsWith(`/${s.slug}`);
+                    return (
+                      <li key={s.slug}>
+                        <Link
+                          href={`/${s.slug}/${firstCity}`}
+                          onMouseEnter={() => setActiveService(s.slug)}
+                          onClick={closeAll}
+                          className={`flex w-full items-center justify-between rounded-xl px-3 py-2 text-left text-sm font-medium transition-colors ${
+                            active?.slug === s.slug || isCurrentCategory
+                              ? "bg-slate-100 text-purple-700"
+                              : "text-slate-700 hover:bg-slate-50 hover:text-slate-900"
+                          }`}
+                        >
+                          <span>{s.label}</span>
+                          <span aria-hidden="true">›</span>
+                        </Link>
+                      </li>
+                    );
+                  })}
                 </ul>
 
                 {/* Cities submenu */}

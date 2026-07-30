@@ -14,14 +14,26 @@ export default function Gallery({ data }: { data: Data }) {
   const itemStudio = data.items[4]; // Bottom Right (Coin Dome ~280px)
 
   return (
-    <section id="work" className="scroll-mt-20 py-20 md:py-28 bg-[#090B13] text-white relative overflow-hidden">
+    <section id="work" className="scroll-mt-20 pt-28 sm:pt-36 md:pt-44 lg:pt-52 pb-64 sm:pb-80 md:pb-[350px] lg:pb-[480px] bg-[#090B13] text-white relative overflow-hidden">
       {/* Background Glow */}
       <div className="pointer-events-none absolute -top-32 right-10 h-[500px] w-[500px] rounded-full bg-purple-600/10 blur-[140px]" />
 
-      <Container>
+      {/* Top Decorative Line & Glow Dot */}
+      <div
+        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-[120px] z-10"
+        style={{
+          background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(115, 130, 255, 0.5) 50%, rgba(0, 0, 0, 0) 100%)",
+        }}
+      />
+      <span
+        className="pointer-events-none absolute top-14 left-[68%] lg:left-[66%] h-2 w-2 rounded-full bg-[#C47BFF] z-10 hidden sm:block"
+        style={{ boxShadow: "0px 0px 20.71px 0px #C47BFFCC" }}
+      />
+
+      <Container className="pb-24 sm:pb-32 lg:pb-40">
         {/* Chapter / Subtitle Badge */}
         <div className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#94A3B8]">
-          <span className="h-2 w-2 rounded-full bg-[#C084FC] shadow-[0_0_8px_#C084FC]" />
+          <span className="h-2 w-2 rounded-full bg-[#C47BFF]" />
           <span>CHAPTER 07</span>
           <span className="h-[2px] w-12 rounded-full bg-gradient-to-r from-[#7382FF]/40 to-transparent inline-block" />
           <span>PROOF OF WORK</span>
@@ -39,70 +51,77 @@ export default function Gallery({ data }: { data: Data }) {
           )}
         </div>
 
-        {/* 2-Column Asymmetric Grid Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
-          {/* LEFT COLUMN (Wide 7-span ~ 724px) */}
-          <div className="lg:col-span-7 flex flex-col gap-6">
-            {/* Top Left: Skyline Mercedes Showroom (Tall 520px) */}
+        {/* 2-Column Grid Layout - Matching Height Columns */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch lg:h-[700px]">
+          {/* LEFT COLUMN (2 Images) */}
+          <div className="flex flex-col gap-6 h-full">
             {itemSkyline && (
-              <div className="group relative w-full h-[380px] sm:h-[520px] rounded-[28px] overflow-hidden border border-white/10 bg-slate-900/60 shadow-2xl transition-all duration-300 hover:border-purple-500/50">
+              <div className="flex-[1.3] h-[260px] sm:h-[320px] lg:h-auto relative w-full rounded-[24px] sm:rounded-[28px] overflow-hidden border border-white/10 bg-slate-900/60 shadow-2xl">
                 <SafeImage
                   src={itemSkyline.src}
                   alt={itemSkyline.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
               </div>
             )}
 
-            {/* Bottom Left: Article AR VR Product Table (~300px) */}
             {itemArticle && (
-              <div className="group relative w-full h-[240px] sm:h-[300px] rounded-[28px] overflow-hidden border border-white/10 bg-slate-900/60 shadow-2xl transition-all duration-300 hover:border-purple-500/50">
+              <div className="flex-1 h-[200px] sm:h-[240px] lg:h-auto relative w-full rounded-[24px] sm:rounded-[28px] overflow-hidden border border-white/10 bg-slate-900/60 shadow-2xl">
                 <SafeImage
                   src={itemArticle.src}
                   alt={itemArticle.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
               </div>
             )}
           </div>
 
-          {/* RIGHT COLUMN (5-span ~ 512px) */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
-            {/* Top Right: Game Avatar Hub (~265px) */}
+          {/* RIGHT COLUMN (3 Images) */}
+          <div className="flex flex-col gap-6 h-full">
             {itemGame && (
-              <div className="group relative w-full h-[240px] sm:h-[265px] rounded-[28px] overflow-hidden border border-white/10 bg-slate-900/60 shadow-2xl transition-all duration-300 hover:border-purple-500/50">
+              <div className="flex-1 h-[180px] sm:h-[220px] lg:h-auto relative w-full rounded-[24px] sm:rounded-[28px] overflow-hidden border border-white/10 bg-slate-900/60 shadow-2xl">
                 <SafeImage
                   src={itemGame.src}
                   alt={itemGame.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
               </div>
             )}
 
-            {/* Middle Right: Roob Electronics Store (~265px) */}
             {itemRoob && (
-              <div className="group relative w-full h-[240px] sm:h-[265px] rounded-[28px] overflow-hidden border border-white/10 bg-slate-900/60 shadow-2xl transition-all duration-300 hover:border-purple-500/50">
+              <div className="flex-1 h-[180px] sm:h-[220px] lg:h-auto relative w-full rounded-[24px] sm:rounded-[28px] overflow-hidden border border-white/10 bg-slate-900/60 shadow-2xl">
                 <SafeImage
                   src={itemRoob.src}
                   alt={itemRoob.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
               </div>
             )}
 
-            {/* Bottom Right: Studio Coin Dome (~265px) */}
             {itemStudio && (
-              <div className="group relative w-full h-[240px] sm:h-[265px] rounded-[28px] overflow-hidden border border-white/10 bg-slate-900/60 shadow-2xl transition-all duration-300 hover:border-purple-500/50">
+              <div className="flex-1 h-[180px] sm:h-[220px] lg:h-auto relative w-full rounded-[24px] sm:rounded-[28px] overflow-hidden border border-white/10 bg-slate-900/60 shadow-2xl">
                 <SafeImage
                   src={itemStudio.src}
                   alt={itemStudio.alt}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
               </div>
             )}
           </div>
         </div>
       </Container>
+
+      {/* Bottom Decorative Line & Glow Dot */}
+      <div
+        className="pointer-events-none absolute bottom-12 left-1/2 -translate-x-1/2 w-[1px] h-[120px] z-10"
+        style={{
+          background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(115, 130, 255, 0.5) 50%, rgba(0, 0, 0, 0) 100%)",
+        }}
+      />
+      <span
+        className="pointer-events-none absolute bottom-24 left-[68%] lg:left-[66%] h-2 w-2 rounded-full bg-[#C47BFF] z-10 hidden sm:block"
+        style={{ boxShadow: "0px 0px 20.71px 0px #C47BFFCC" }}
+      />
     </section>
   );
 }

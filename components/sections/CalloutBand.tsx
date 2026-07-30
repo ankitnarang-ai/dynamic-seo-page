@@ -12,7 +12,7 @@ export default function CalloutBand({ data }: { data: Data }) {
       <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[450px] w-[600px] rounded-full bg-purple-600/10 blur-[130px]" />
 
       {/* Floating Accent Dots */}
-      <span className="h-1.5 w-1.5 rounded-full bg-[#C084FC] shadow-[0_0_12px_#C084FC] absolute top-14 right-[22%] hidden md:block" />
+      <span className="h-1.5 w-1.5 rounded-full bg-[#C47BFF] absolute top-14 right-[22%] hidden md:block" />
 
       <Container className="relative z-10">
         {/* Top Vertical Line Accent */}
@@ -20,7 +20,7 @@ export default function CalloutBand({ data }: { data: Data }) {
 
         {/* Chapter / Subtitle Badge */}
         <div className="mb-6 flex items-center justify-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#94A3B8]">
-          <span className="h-2 w-2 rounded-full bg-[#C084FC] shadow-[0_0_8px_#C084FC]" />
+          <span className="h-2 w-2 rounded-full bg-[#C47BFF]" />
           <span>CHAPTER 05</span>
           <span className="h-[2px] w-12 rounded-full bg-gradient-to-r from-[#7382FF]/40 to-transparent inline-block" />
           <span>THE IMPACT</span>

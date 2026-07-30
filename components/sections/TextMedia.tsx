@@ -20,7 +20,7 @@ export default function TextMedia({ data }: { data: Data }) {
         <div>
           {/* Chapter / Subtitle Badge */}
           <div className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-            <span className="h-2 w-2 rounded-full bg-[#C084FC] shadow-[0_0_8px_#C084FC]" />
+            <span className="h-2 w-2 rounded-full bg-[#C47BFF]" />
             <span>CHAPTER 02</span>
             <span className="h-[2px] w-12 rounded-full bg-gradient-to-r from-[#7382FF]/40 to-transparent inline-block" />
             <span>THE DIGITAL SHIFT</span>

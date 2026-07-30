@@ -5,55 +5,34 @@ const GLOBAL_OFFICES = [
   {
     country: "INDIA",
     address: "301, Syadwad Business Park, H32, Sector 63, Noida, (Head Office)",
-    icon: (
-      <svg className="w-8 h-8 mx-auto text-slate-300" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3zm0 2.5l5 4.5v7.5h-2v-6H9v6H7V10l5-4.5z"/>
-      </svg>
-    ),
+    iconSrc: "/footer/india.svg",
   },
   {
     country: "UNITED STATES",
     address: "711 S Glendora Ave West Covina, CA",
-    icon: (
-      <svg className="w-8 h-8 mx-auto text-slate-300" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2l-1 4h2l-1-4zm-4 5l1 3h6l1-3H8zm-2 5h12v9H6v-9zm2 2v5h8v-5H8z"/>
-      </svg>
-    ),
+    iconSrc: "/footer/statue_of_liberty_line.svg",
   },
   {
     country: "UNITED KINGDOM",
     address: "86-90, Paul Street, London, EC2A 4NE England",
-    icon: (
-      <svg className="w-8 h-8 mx-auto text-slate-300" viewBox="0 0 24 24" fill="currentColor">
-        <circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" strokeWidth="2"/>
-        <circle cx="12" cy="12" r="3" fill="currentColor"/>
-      </svg>
-    ),
+    iconSrc: "/footer/unitedkingdom.svg",
   },
   {
     country: "UAE",
     address: "Ontario Tower Dubai, UAE",
-    icon: (
-      <svg className="w-8 h-8 mx-auto text-slate-300" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M19 2H5v20h14V2zM7 4h10v16H7V4zm2 2h6v2H9V6zm0 4h6v2H9v-2zm0 4h6v2H9v-2z"/>
-      </svg>
-    ),
+    iconSrc: "/footer/uae.svg",
   },
   {
     country: "CANADA",
     address: "7168 179 ST, Surrey BC, V3S8C5",
-    icon: (
-      <svg className="w-8 h-8 mx-auto text-slate-300" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/>
-      </svg>
-    ),
+    iconSrc: "/footer/canada.svg",
   },
 ];
 
 export default function Footer({ brand }: { brand: string }) {
   return (
     <footer className="bg-[#050711] text-white pt-16 pb-10 border-t border-slate-800/60 font-sans">
-      <Container>
+      <Container className="max-w-6xl px-8 sm:px-16 lg:px-28">
         {/* Giant ABHIWAN Logo */}
         <div className="text-center mb-16">
           <SafeImage
@@ -65,75 +44,96 @@ export default function Footer({ brand }: { brand: string }) {
 
         {/* Global Presence Section */}
         <div className="mb-20">
-          <div className="text-xs font-semibold uppercase tracking-[0.2em] text-[#3B82F6] text-center mb-10">
+          <div className="text-[18px] font-bold uppercase tracking-normal text-[#2C72FF] text-center leading-none mb-10">
             OUR GLOBAL PRESENCE
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-slate-800/80">
+          <div className="flex flex-col sm:flex-row flex-wrap lg:flex-nowrap items-center justify-between gap-6 lg:gap-0">
             {GLOBAL_OFFICES.map((off, i) => (
-              <div key={i} className={`${i > 0 ? "pt-6 md:pt-0" : ""} px-3 flex flex-col items-center justify-start space-y-3`}>
-                <div className="h-10 flex items-center justify-center">{off.icon}</div>
-                <div className="text-xs font-bold tracking-wider uppercase text-white">{off.country}</div>
-                <div className="text-[12px] leading-relaxed text-slate-400 max-w-[190px] mx-auto font-normal">
-                  {off.address}
+              <div key={i} className="flex items-center">
+                {/* Location Card: 160.5px x 147px (No Border) */}
+                <div className="w-[160px] h-[147px] flex flex-col items-center justify-center p-3 text-center rounded-xl relative overflow-hidden">
+                  <div className="h-14 flex items-center justify-center mb-2">
+                    <SafeImage
+                      src={off.iconSrc}
+                      alt={off.country}
+                      className="h-12 w-auto max-h-12 object-contain brightness-0 invert opacity-95"
+                    />
+                  </div>
+                  <div className="text-[11px] font-bold tracking-wider uppercase text-white mb-1">
+                    {off.country}
+                  </div>
+                  <div className="text-[10px] leading-tight text-slate-400 max-w-[140px] mx-auto font-normal">
+                    {off.address}
+                  </div>
                 </div>
+
+                {/* Vertical Separator Line */}
+                {i < GLOBAL_OFFICES.length - 1 && (
+                  <div
+                    className="hidden lg:block w-[1px] h-[146px] mx-3"
+                    style={{
+                      background: "linear-gradient(180deg, #151836 0%, #A1A1A1 49.58%, #151836 100%)",
+                    }}
+                  />
+                )}
               </div>
             ))}
           </div>
         </div>
 
         {/* Main Footer Links */}
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-10 border-t border-slate-800/60 pt-16 pb-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 sm:gap-10 border-t border-slate-800/60 pt-16 pb-12">
           {/* Company Column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#3B82F6] mb-5">
+            <h3 className="text-[15px] font-bold uppercase tracking-normal leading-none text-[#2C72FF] mb-3.5">
               OUR COMPANY
             </h3>
-            <ul className="space-y-2.5 text-xs text-slate-300 font-normal">
-              <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Portfolio</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Blogs</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
-              <li><a href="#" className="hover:text-white transition-colors flex items-center gap-1">Careers <span>↗</span></a></li>
+            <ul className="space-y-2 text-[12px] leading-[18px] tracking-[0.02em] font-normal text-white">
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Home</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Services</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Portfolio</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Blogs</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">About Us</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Contact Us</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors flex items-center gap-1">Careers <span>↗</span></a></li>
             </ul>
           </div>
 
           {/* Services Col 1 */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#3B82F6] mb-5">
+            <h3 className="text-[15px] font-bold uppercase tracking-normal leading-none text-[#2C72FF] mb-3.5">
               SERVICES
             </h3>
-            <ul className="space-y-2.5 text-xs text-slate-300 font-normal">
-              <li><a href="#" className="hover:text-white transition-colors">Esports Games</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Adver Gaming</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">3D Game Art</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">3D Product Modelling</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Digital Twin</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Augmented Reality</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Virtual Reality</a></li>
+            <ul className="space-y-2 text-[12px] leading-[18px] tracking-[0.02em] font-normal text-white">
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Esports Games</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Adver Gaming</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">3D Game Art</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">3D Product Modelling</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Digital Twin</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Augmented Reality</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Virtual Reality</a></li>
             </ul>
           </div>
 
           {/* Services Col 2 */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#3B82F6] mb-5">
+            <h3 className="text-[15px] font-bold uppercase tracking-normal leading-none text-[#2C72FF] mb-3.5">
               SERVICES
             </h3>
-            <ul className="space-y-2.5 text-xs text-slate-300 font-normal">
-              <li><a href="#" className="hover:text-white transition-colors">Blockchain Development</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Interactive Kiosks</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">AI / ML</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Digital Marketing</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Website Development</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">App Development</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Web3 Games Development</a></li>
+            <ul className="space-y-2 text-[12px] leading-[18px] tracking-[0.02em] font-normal text-white">
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Blockchain Development</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Interactive Kiosks</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">AI / ML</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Digital Marketing</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Website Development</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">App Development</a></li>
+              <li><a href="#" className="hover:text-slate-300 transition-colors">Web3 Games Development</a></li>
             </ul>
           </div>
 
           {/* Follow Us On Column */}
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#3B82F6] mb-5">
+            <h3 className="text-[15px] font-bold uppercase tracking-normal leading-none text-[#2C72FF] mb-3.5">
               FOLLOW US ON
             </h3>
             <div className="space-y-2.5">
@@ -157,22 +157,22 @@ export default function Footer({ brand }: { brand: string }) {
           </div>
 
           {/* Contact Us Column */}
-          <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.15em] text-[#3B82F6] mb-5">
+          <div className="col-span-2 sm:col-span-1">
+            <h3 className="text-[15px] font-bold uppercase tracking-normal leading-none text-[#2C72FF] mb-3.5">
               CONTACT US
             </h3>
-            <ul className="space-y-3 text-xs text-slate-300 font-normal">
-              <li className="flex items-start gap-2.5">
-                <svg className="w-4 h-4 text-slate-400 flex-none mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <span><strong>For Sales :</strong> +91 - 95991458505</span>
+            <ul className="space-y-2.5 text-[12px] leading-[20px] tracking-[0.02em] text-white font-normal">
+              <li className="flex items-start gap-2">
+                <svg className="w-3.5 h-3.5 text-slate-400 flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span><strong className="font-semibold text-white">For Sales :</strong> +91 - 95991458505</span>
               </li>
-              <li className="flex items-start gap-2.5">
-                <svg className="w-4 h-4 text-slate-400 flex-none mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-                <span><strong>For HR :</strong> +91 - 9910655805</span>
+              <li className="flex items-start gap-2">
+                <svg className="w-3.5 h-3.5 text-slate-400 flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <span><strong className="font-semibold text-white">For HR :</strong> +91 - 9910655805</span>
               </li>
-              <li className="flex items-start gap-2.5">
-                <svg className="w-4 h-4 text-slate-400 flex-none mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                <span><strong>Mail Us :</strong> sales@abhiwan.com</span>
+              <li className="flex items-start gap-2">
+                <svg className="w-3.5 h-3.5 text-slate-400 flex-none mt-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                <span><strong className="font-semibold text-white">Mail Us :</strong> sales@abhiwan.com</span>
               </li>
             </ul>
           </div>

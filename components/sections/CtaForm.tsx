@@ -11,22 +11,33 @@ export default function CtaForm({ data }: { data: Data }) {
   if (!data.fields || data.fields.length === 0) return null;
 
   const renderHeading = () => {
-    const text = data.heading || "";
-    if (text.toLowerCase().includes("interactive")) {
-      const parts = text.split(/interactive/i);
-      return (
-        <h2 className="text-[36px] sm:text-[48px] font-bold text-white leading-[1.1] tracking-[-1.5px]">
-          {parts[0]}
-          <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-indigo-300 bg-clip-text text-transparent">
-            interactive
-          </span>
-          {parts[1]}
-        </h2>
-      );
-    }
     return (
-      <h2 className="text-[36px] sm:text-[48px] font-bold text-white leading-[1.1] tracking-[-1.5px]">
-        {data.heading}
+      <h2 className="text-[36px] sm:text-[48px] font-bold leading-[1.12] tracking-[-1.5px]">
+        <span className="text-[#F0F6FC]">Let's build</span>
+        <br />
+        <span className="text-[#F0F6FC]">the future of</span>
+        <br />
+        <span
+          className="bg-clip-text text-transparent font-bold inline-block"
+          style={{
+            backgroundImage: "linear-gradient(90deg, #F0F6FC 0%, #C47BFF 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          interactive
+        </span>
+        <br />
+        <span
+          className="bg-clip-text text-transparent font-bold inline-block"
+          style={{
+            backgroundImage: "linear-gradient(90deg, #F0F6FC 0%, #C47BFF 100%)",
+            WebkitBackgroundClip: "text",
+            WebkitTextFillColor: "transparent",
+          }}
+        >
+          experiences.
+        </span>
       </h2>
     );
   };
@@ -38,22 +49,34 @@ export default function CtaForm({ data }: { data: Data }) {
   ];
 
   return (
-    <section id="contact" className="scroll-mt-20 py-20 md:py-28 bg-[#090B13] text-white relative overflow-hidden">
+    <section id="contact" className="scroll-mt-20 py-24 sm:py-32 md:py-40 bg-[#090B13] text-white relative overflow-hidden">
       {/* Background Ambient Glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[500px] w-[700px] rounded-full bg-purple-600/10 blur-[140px]" />
 
-      <Container className="relative z-10">
-        {/* Top Vertical Line Accent */}
-        <div className="w-[1px] h-12 bg-gradient-to-b from-transparent via-purple-500/50 to-[#C084FC] mx-auto mb-10" />
+      {/* Top Decorative Line & Glow Dot */}
+      <div
+        className="pointer-events-none absolute top-0 left-1/2 -translate-x-1/2 w-[1px] h-[120px] z-10"
+        style={{
+          background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(115, 130, 255, 0.5) 50%, rgba(0, 0, 0, 0) 100%)",
+        }}
+      />
+      <span
+        className="pointer-events-none absolute top-14 left-[68%] lg:left-[66%] h-2 w-2 rounded-full bg-[#C47BFF] z-10 hidden sm:block"
+        style={{ boxShadow: "0px 0px 20.71px 0px #C47BFFCC" }}
+      />
 
+      <Container className="relative z-10">
         {/* Outer Dark Glass Card */}
-        <div className="rounded-[36px] bg-[#0A0D1A] border border-slate-800/80 p-8 sm:p-12 lg:p-14 shadow-2xl relative overflow-hidden">
+        <div
+          className="rounded-[36px] border border-slate-800/80 p-8 sm:p-12 lg:p-14 shadow-2xl relative overflow-hidden"
+          style={{ background: "linear-gradient(180deg, rgba(9, 14, 33, 0.7) 0%, rgba(4, 6, 21, 0.4) 100%)" }}
+        >
           <div className="grid gap-12 lg:grid-cols-12 lg:gap-14 items-start">
             {/* Left Column: Heading & Feature Bullets */}
             <div className="lg:col-span-6">
               {/* Chapter Badge */}
               <div className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#94A3B8]">
-                <span className="h-2 w-2 rounded-full bg-[#C084FC] shadow-[0_0_8px_#C084FC]" />
+                <span className="h-2 w-2 rounded-full bg-[#C47BFF]" />
                 <span>CHAPTER 08</span>
                 <span className="h-[2px] w-12 rounded-full bg-gradient-to-r from-[#7382FF]/40 to-transparent inline-block" />
                 <span>LET&apos;S BUILD TOGETHER</span>
@@ -148,10 +171,19 @@ export default function CtaForm({ data }: { data: Data }) {
             </div>
           </div>
         </div>
-
-        {/* Bottom Vertical Line Accent */}
-        <div className="w-[1px] h-12 bg-gradient-to-b from-[#C084FC] via-purple-500/50 to-transparent mx-auto mt-10" />
       </Container>
+
+      {/* Bottom Decorative Line & Glow Dot */}
+      <div
+        className="pointer-events-none absolute bottom-0 left-1/2 -translate-x-1/2 w-[1px] h-[120px] z-10"
+        style={{
+          background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(115, 130, 255, 0.5) 50%, rgba(0, 0, 0, 0) 100%)",
+        }}
+      />
+      <span
+        className="pointer-events-none absolute bottom-14 left-[68%] lg:left-[66%] h-2 w-2 rounded-full bg-[#C47BFF] z-10 hidden sm:block"
+        style={{ boxShadow: "0px 0px 20.71px 0px #C47BFFCC" }}
+      />
     </section>
   );
 }

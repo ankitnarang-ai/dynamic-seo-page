@@ -33,7 +33,7 @@ export default function Header({
           {/* Right CTA Button */}
           <a
             href="#contact"
-            className="hidden items-center gap-1.5 rounded-full bg-[#0B0F19] px-5 py-2.5 text-sm font-medium text-white transition-all hover:scale-[1.02] hover:bg-black sm:inline-flex shadow-sm"
+            className="hidden items-center gap-1.5 rounded-full bg-[#0B0F19] px-5 py-2.5 text-sm font-medium text-white transition-all hover:scale-[1.02] hover:bg-black md:inline-flex shadow-sm"
           >
             <span>Start a project</span>
             <span className="text-xs font-bold">↗</span>

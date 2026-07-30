@@ -22,7 +22,7 @@ export default function CardGrid({ data }: { data: Data }) {
         <Container>
           {/* Chapter / Subtitle Badge */}
           <div className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">
-            <span className="h-2 w-2 rounded-full bg-[#C084FC] shadow-[0_0_8px_#C084FC]" />
+            <span className="h-2 w-2 rounded-full bg-[#C47BFF]" />
             <span>CHAPTER 06</span>
             <span className="h-[2px] w-12 rounded-full bg-gradient-to-r from-[#7382FF]/40 to-transparent inline-block" />
             <span>WHY ABHIWAN</span>
@@ -39,9 +39,12 @@ export default function CardGrid({ data }: { data: Data }) {
             <div className="grid gap-5 lg:grid-cols-12">
               {/* Card 01: Featured Tall */}
               {c1 && (
-                <div className="lg:col-span-6 flex flex-col justify-between min-h-[280px] rounded-[24px] bg-[#EBEDF2] p-7 border border-slate-200/80 shadow-sm transition-transform hover:scale-[1.01]">
-                  <span className="text-xs font-mono font-semibold text-slate-400">01</span>
-                  <div>
+                <div
+                  className="lg:col-span-6 flex flex-col justify-between min-h-[336px] rounded-[26px] p-6"
+                  style={{ background: "linear-gradient(180deg, rgba(13, 17, 29, 0.06) 0%, rgba(13, 17, 29, 0.02) 100%)" }}
+                >
+                  <span className="text-[13px] font-mono font-medium text-slate-400">01</span>
+                  <div className="my-auto pt-4">
                     <h3 className="text-xl font-bold text-[#0F172A]">{c1.title}</h3>
                     <p className="mt-2 text-sm font-normal text-slate-500 leading-relaxed max-w-md">
                       {c1.description}
@@ -53,9 +56,12 @@ export default function CardGrid({ data }: { data: Data }) {
               {/* Cards 02 & 03: Stacked Right */}
               <div className="lg:col-span-6 flex flex-col gap-5">
                 {c2 && (
-                  <div className="flex-1 flex flex-col justify-between min-h-[130px] rounded-[24px] bg-[#EBEDF2] p-6 border border-slate-200/80 shadow-sm transition-transform hover:scale-[1.01]">
-                    <span className="text-xs font-mono font-semibold text-slate-400">02</span>
-                    <div>
+                  <div
+                    className="flex-1 flex flex-col justify-between min-h-[155px] rounded-[26px] p-6"
+                    style={{ background: "linear-gradient(180deg, rgba(13, 17, 29, 0.06) 0%, rgba(13, 17, 29, 0.02) 100%)" }}
+                  >
+                    <span className="text-[13px] font-mono font-medium text-slate-400">02</span>
+                    <div className="my-auto pt-2">
                       <h3 className="text-base font-bold text-[#0F172A]">{c2.title}</h3>
                       <p className="mt-1 text-sm font-normal text-slate-500 leading-relaxed">
                         {c2.description}
@@ -64,9 +70,12 @@ export default function CardGrid({ data }: { data: Data }) {
                   </div>
                 )}
                 {c3 && (
-                  <div className="flex-1 flex flex-col justify-between min-h-[130px] rounded-[24px] bg-[#EBEDF2] p-6 border border-slate-200/80 shadow-sm transition-transform hover:scale-[1.01]">
-                    <span className="text-xs font-mono font-semibold text-slate-400">03</span>
-                    <div>
+                  <div
+                    className="flex-1 flex flex-col justify-between min-h-[155px] rounded-[26px] p-6"
+                    style={{ background: "linear-gradient(180deg, rgba(13, 17, 29, 0.06) 0%, rgba(13, 17, 29, 0.02) 100%)" }}
+                  >
+                    <span className="text-[13px] font-mono font-medium text-slate-400">03</span>
+                    <div className="my-auto pt-2">
                       <h3 className="text-base font-bold text-[#0F172A]">{c3.title}</h3>
                       <p className="mt-1 text-sm font-normal text-slate-500 leading-relaxed">
                         {c3.description}
@@ -81,20 +90,22 @@ export default function CardGrid({ data }: { data: Data }) {
             {middleRow.length > 0 && (
               <div className="grid gap-5 md:grid-cols-3">
                 {middleRow.map((c, i) => {
+                  const numStr = String(i + 4).padStart(2, "0");
                   const isFeaturedBorder = i === 2; // Card 06
                   return (
                     <div
                       key={i}
-                      className={`flex flex-col justify-between min-h-[140px] rounded-[24px] bg-[#EBEDF2] p-6 shadow-sm transition-all hover:scale-[1.01] ${
+                      className={`flex flex-col justify-between min-h-[155px] rounded-[26px] p-6 ${
                         isFeaturedBorder
-                          ? "border-2 border-indigo-400/80 shadow-lg shadow-indigo-500/10"
-                          : "border border-slate-200/80"
+                          ? "border border-[#7382FF]/50 shadow-[0_0_25px_rgba(115,130,255,0.22)]"
+                          : ""
                       }`}
+                      style={{
+                        background: "linear-gradient(180deg, rgba(13, 17, 29, 0.06) 0%, rgba(13, 17, 29, 0.02) 100%)",
+                      }}
                     >
-                      <span className="text-xs font-mono font-semibold text-slate-400">
-                        {String(i + 4).padStart(2, "0")}
-                      </span>
-                      <div>
+                      <span className="text-[13px] font-mono font-medium text-slate-400">{numStr}</span>
+                      <div className="my-auto pt-2">
                         <h3 className="text-base font-bold text-[#0F172A]">{c.title}</h3>
                         <p className="mt-1 text-sm font-normal text-slate-500 leading-relaxed">
                           {c.description}
@@ -109,44 +120,48 @@ export default function CardGrid({ data }: { data: Data }) {
             {/* Row 3: 2 Cards */}
             {row3.length > 0 && (
               <div className="grid gap-5 md:grid-cols-2">
-                {row3.map((c, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col justify-between min-h-[130px] rounded-[24px] bg-[#EBEDF2] p-6 border border-slate-200/80 shadow-sm transition-transform hover:scale-[1.01]"
-                  >
-                    <span className="text-xs font-mono font-semibold text-slate-400">
-                      {String(i + 7).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <h3 className="text-base font-bold text-[#0F172A]">{c.title}</h3>
-                      <p className="mt-1 text-sm font-normal text-slate-500 leading-relaxed">
-                        {c.description}
-                      </p>
+                {row3.map((c, i) => {
+                  const numStr = String(i + 7).padStart(2, "0");
+                  return (
+                    <div
+                      key={i}
+                      className="flex flex-col justify-between min-h-[155px] rounded-[26px] p-6"
+                      style={{ background: "linear-gradient(180deg, rgba(13, 17, 29, 0.06) 0%, rgba(13, 17, 29, 0.02) 100%)" }}
+                    >
+                      <span className="text-[13px] font-mono font-medium text-slate-400">{numStr}</span>
+                      <div className="my-auto pt-2">
+                        <h3 className="text-base font-bold text-[#0F172A]">{c.title}</h3>
+                        <p className="mt-1 text-sm font-normal text-slate-500 leading-relaxed">
+                          {c.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
 
             {/* Row 4: 2 Cards */}
             {row4.length > 0 && (
               <div className="grid gap-5 md:grid-cols-2">
-                {row4.map((c, i) => (
-                  <div
-                    key={i}
-                    className="flex flex-col justify-between min-h-[130px] rounded-[24px] bg-[#EBEDF2] p-6 border border-slate-200/80 shadow-sm transition-transform hover:scale-[1.01]"
-                  >
-                    <span className="text-xs font-mono font-semibold text-slate-400">
-                      {String(i + 9).padStart(2, "0")}
-                    </span>
-                    <div>
-                      <h3 className="text-base font-bold text-[#0F172A]">{c.title}</h3>
-                      <p className="mt-1 text-sm font-normal text-slate-500 leading-relaxed">
-                        {c.description}
-                      </p>
+                {row4.map((c, i) => {
+                  const numStr = String(i + 9).padStart(2, "0");
+                  return (
+                    <div
+                      key={i}
+                      className="flex flex-col justify-between min-h-[155px] rounded-[26px] p-6"
+                      style={{ background: "linear-gradient(180deg, rgba(13, 17, 29, 0.06) 0%, rgba(13, 17, 29, 0.02) 100%)" }}
+                    >
+                      <span className="text-[13px] font-mono font-medium text-slate-400">{numStr}</span>
+                      <div className="my-auto pt-2">
+                        <h3 className="text-base font-bold text-[#0F172A]">{c.title}</h3>
+                        <p className="mt-1 text-sm font-normal text-slate-500 leading-relaxed">
+                          {c.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             )}
           </div>
@@ -183,7 +198,7 @@ export default function CardGrid({ data }: { data: Data }) {
       <div className="pointer-events-none absolute -bottom-20 left-10 h-96 w-96 rounded-full bg-purple-600/10 blur-3xl" />
       <Container>
         <div className="mb-6 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#94A3B8]">
-          <span className="h-2 w-2 rounded-full bg-[#C084FC] shadow-[0_0_8px_#C084FC]" />
+          <span className="h-2 w-2 rounded-full bg-[#C47BFF]" />
           <span>CHAPTER 03</span>
           <span className="h-[2px] w-12 rounded-full bg-gradient-to-r from-[#7382FF]/40 to-transparent inline-block" />
           <span>WHY IT MATTERS</span>
@@ -196,17 +211,28 @@ export default function CardGrid({ data }: { data: Data }) {
               return (
                 <div
                   key={i}
-                  className="group relative flex flex-col justify-between min-h-[140px] rounded-[20px] border border-slate-800/80 bg-[#101423] p-6 lg:p-7 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/50 hover:bg-[#151a2e]"
+                  className="relative flex flex-col justify-between min-h-[140px] rounded-[20px] border border-slate-800/80 bg-[#101423] p-6 lg:p-7 shadow-lg"
                 >
                   <div className="flex items-start gap-4">
-                    <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-purple-950/70 border border-purple-500/30 text-[11px] font-mono font-semibold text-purple-300">
+                    <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#0B0F1E] border border-white/15 text-[#C47BFF] font-sans font-semibold text-[11px] leading-[16.5px] tracking-normal">
                       {numStr}
                     </span>
-                    <p className="text-[15px] font-normal leading-relaxed text-[#CBD5E1]">
-                      {c.description || c.title}
-                    </p>
+                    <div>
+                      {c.title && c.title !== numStr && (
+                        <h3 className="text-base font-bold text-white mb-1">{c.title}</h3>
+                      )}
+                      <p className="text-[14px] font-normal leading-relaxed text-[#CBD5E1]">
+                        {c.description || c.title}
+                      </p>
+                    </div>
                   </div>
-                  <span className="absolute bottom-4 right-4 h-1.5 w-1.5 rounded-full bg-[#C084FC]/60 transition-opacity group-hover:opacity-100" />
+                  <div className="mt-4 flex items-center gap-3">
+                    <div
+                      className="h-[1px] flex-1"
+                      style={{ background: "linear-gradient(90deg, #00000000 0%, #FFFFFF14 8%, #00000000 100%)" }}
+                    />
+                    <span className="h-1.5 w-1.5 flex-none rounded-full bg-[#C47BFF]" />
+                  </div>
                 </div>
               );
             })}
@@ -218,17 +244,28 @@ export default function CardGrid({ data }: { data: Data }) {
                 return (
                   <div
                     key={i}
-                    className="group relative flex flex-col justify-between min-h-[130px] rounded-[20px] border border-slate-800/80 bg-[#101423] p-6 lg:p-7 shadow-lg transition-all duration-300 hover:-translate-y-1 hover:border-purple-500/50 hover:bg-[#151a2e]"
+                    className="relative flex flex-col justify-between min-h-[130px] rounded-[20px] border border-slate-800/80 bg-[#101423] p-6 lg:p-7 shadow-lg"
                   >
                     <div className="flex items-start gap-4">
-                      <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-purple-950/70 border border-purple-500/30 text-[11px] font-mono font-semibold text-purple-300">
+                      <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-[#0B0F1E] border border-white/15 text-[#C47BFF] font-sans font-semibold text-[11px] leading-[16.5px] tracking-normal">
                         {numStr}
                       </span>
-                      <p className="text-[15px] font-normal leading-relaxed text-[#CBD5E1]">
-                        {c.description || c.title}
-                      </p>
+                      <div>
+                        {c.title && c.title !== numStr && (
+                          <h3 className="text-base font-bold text-white mb-1">{c.title}</h3>
+                        )}
+                        <p className="text-[14px] font-normal leading-relaxed text-[#CBD5E1]">
+                          {c.description || c.title}
+                        </p>
+                      </div>
                     </div>
-                    <span className="absolute bottom-4 right-4 h-1.5 w-1.5 rounded-full bg-[#C084FC]/60 transition-opacity group-hover:opacity-100" />
+                    <div className="mt-4 flex items-center gap-3">
+                      <div
+                        className="h-[1px] flex-1"
+                        style={{ background: "linear-gradient(90deg, #00000000 0%, #FFFFFF14 8%, #00000000 100%)" }}
+                      />
+                      <span className="h-1.5 w-1.5 flex-none rounded-full bg-[#C47BFF]" />
+                    </div>
                   </div>
                 );
               })}

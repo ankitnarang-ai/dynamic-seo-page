@@ -16,7 +16,7 @@
     ],
     "ctas": [
       { "label": "Get a Quote", "href": "#contact", "variant": "primary" },
-      { "label": "View our work", "href": "#services", "variant": "ghost" }
+      { "label": "View our work", "href": "#work", "variant": "ghost" }
     ]
   },
   "logos": {
@@ -34,15 +34,24 @@
   },
   "sections": [
     {
+      "type": "text-media",
+      "heading": "Game Development Services in {city}",
+      "body": "Game Development in {city} is transforming how studios and brands create interactive entertainment and digital experiences. As {city} becomes a growing tech and creative hub, studios are looking for high-performance game engineering, original art pipelines, and multiplatform delivery.\n\nFrom mobile titles to immersive PC and console games, our team delivers full-cycle game development for studios across {city}. We combine senior tech leadership, Unreal Engine and Unity expertise, and live-ops backend infrastructure to turn creative visions into successful games.\n\nWhether you are launching an indie title or scaling an enterprise gaming platform in {city}, our end-to-end development services ensure top-tier performance, engaging gameplay loops, and seamless player retention.",
+      "image": "/images/Container.svg",
+      "imageAlt": "Game Development Services in {city}"
+    },
+    {
       "type": "card-grid",
-      "heading": "Why studios in {city} choose us",
+      "heading": "Importance of Custom Game Development for Studios",
       "cards": [
-        { "title": "Full-cycle delivery", "description": "From prototype to launch — one accountable team." },
-        { "title": "Cross-platform", "description": "Ship to mobile, PC and console from a single codebase." },
-        { "title": "Art that ships", "description": "In-house 2D/3D art and animation pipelines." },
-        { "title": "Live-ops ready", "description": "Backend, analytics and events built to scale in {country}." },
-        { "title": "Performance first", "description": "Tuned for smooth frame rates on real devices." },
-        { "title": "Transparent process", "description": "Clear milestones and demos every sprint." }
+        { "title": "Custom Mechanics", "description": "Delivers custom gameplay mechanics tuned for your target audience in {city}" },
+        { "title": "Multi-Platform", "description": "Provides cross-platform compilation across iOS, Android, PC, and consoles" },
+        { "title": "Netcode & Cloud", "description": "Includes scalable multiplayer backend, netcode, and cloud infrastructure" },
+        { "title": "3D Art Pipelines", "description": "Features custom 2D/3D art pipelines and AAA-quality visual effects" },
+        { "title": "Engine Tuning", "description": "Optimizes frame rates and memory usage for smooth performance on all devices" },
+        { "title": "Live Monetization", "description": "Enables real-time analytics, live events, and monetization strategies" },
+        { "title": "Fast Prototyping", "description": "Accelerates time-to-market with proven game engine frameworks" },
+        { "title": "Ongoing Live-Ops", "description": "Offers long-term live-ops support and continuous content updates" }
       ]
     },
     {
@@ -63,11 +72,40 @@
       "body": "Great games are built on tight loops, readable art and reliable tech. We pair senior engineering with a dedicated art team so studios in {city} can ship polished titles on time and iterate with confidence after launch."
     },
     {
+      "type": "card-grid",
+      "heading": "Why Choose Abhiwan for Game Development",
+      "cards": [
+        { "title": "Full-cycle delivery", "description": "From prototype to launch — one accountable team." },
+        { "title": "Cross-platform", "description": "Ship to mobile, PC and console from a single codebase." },
+        { "title": "Art that ships", "description": "In-house 2D/3D art and animation pipelines." },
+        { "title": "Live-ops ready", "description": "Backend, analytics and events built to scale in {country}." },
+        { "title": "Performance first", "description": "Tuned for smooth frame rates on real devices." },
+        { "title": "Transparent process", "description": "Clear milestones and demos every sprint." },
+        { "title": "Engine Experts", "description": "Deep expertise in Unreal Engine 5 and Unity." },
+        { "title": "Local Insight", "description": "Understanding player expectations across {city} and {country}." },
+        { "title": "AAA Quality", "description": "Rigorous QA testing on over 50 real target devices." },
+        { "title": "End to End Support", "description": "Dedicated engineering pod from pre-production to post-launch." }
+      ]
+    },
+    {
+      "type": "gallery",
+      "heading": "Selected Game Development Work",
+      "subheading": "Titles and interactive experiences built for studios.",
+      "items": [
+        { "src": "/images/Skyline Protocol.svg", "alt": "Skyline Protocol - 3D Sci-Fi Action Game" },
+        { "src": "/images/game.svg", "alt": "Avatar Hub - Multiplayer Metaverse Game" },
+        { "src": "/images/roob.svg", "alt": "Roob - VR & Mobile Arcade Experience" },
+        { "src": "/images/Article.svg", "alt": "Article - AR Interactive Tactical Strategy" },
+        { "src": "/images/studio.svg", "alt": "Studio - Coin Dome 3D RPG World" }
+      ]
+    },
+    {
       "type": "testimonials",
       "heading": "What our clients say.",
       "items": [
-        { "name": "Studio Director", "role": "Mobile Publisher, {city}", "quote": "They delivered a polished title on schedule and stayed on for live-ops. Exceptional team." },
-        { "name": "Producer", "role": "Indie Studio", "quote": "The art and engineering quality raised our whole product." }
+        { "name": "Alex Mercer", "role": "Studio Director, Mobile Publisher in {city}", "quote": "They delivered a polished title on schedule and stayed on for live-ops. Exceptional team." },
+        { "name": "Elena Rostova", "role": "Lead Producer, Indie Game Studio", "quote": "The art and engineering quality raised our whole product. Our launch metrics exceeded expectations." },
+        { "name": "Marcus Vance", "role": "VP of Interactive, Global Gaming Media", "quote": "Abhiwan re-architected our multiplayer netcode on UE5 and shipped a flawless build to global players." }
       ]
     },
     {
@@ -75,8 +113,10 @@
       "heading": "Let's build your next game.",
       "subheading": "Tell us about your project and we'll get back within one business day.",
       "fields": [
-        { "name": "name", "label": "Your name", "type": "text", "placeholder": "Jane Doe" },
-        { "name": "email", "label": "Work email", "type": "email", "placeholder": "jane@studio.com" },
+        { "name": "firstName", "label": "First name", "type": "text", "placeholder": "First name" },
+        { "name": "lastName", "label": "Last name", "type": "text", "placeholder": "Last name" },
+        { "name": "email", "label": "Work email", "type": "email", "placeholder": "Work email" },
+        { "name": "company", "label": "Company", "type": "text", "placeholder": "Company" },
         { "name": "message", "label": "About your game", "type": "textarea", "placeholder": "Genre, platforms, timeline" }
       ],
       "submitLabel": "Request a quote"
@@ -84,10 +124,13 @@
     {
       "type": "faqs",
       "heading": "Frequently asked.",
+      "subheading": "Have questions about game development? Talk to our studio team.",
       "items": [
         { "q": "Do you work with studios in {city}?", "a": "Yes — we partner with teams in {city} and across {country}, remotely and on-site." },
         { "q": "Which platforms do you support?", "a": "Mobile (iOS/Android), PC, console and cross-platform builds." },
-        { "q": "Can you take over an existing project?", "a": "Yes. We regularly rescue and complete in-progress titles." }
+        { "q": "Can you take over an existing project?", "a": "Yes. We regularly rescue and complete in-progress titles." },
+        { "q": "What game engines do you specialize in?", "a": "We specialize in Unreal Engine 5 and Unity for 2D, 3D, VR, and multiplayer projects." },
+        { "q": "Do you handle post-launch live-ops?", "a": "Yes, we provide ongoing maintenance, feature updates, events, and server scaling." }
       ]
     }
   ],

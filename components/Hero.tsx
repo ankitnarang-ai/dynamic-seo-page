@@ -9,21 +9,38 @@ export default function Hero({ hero }: { hero: HeroData }) {
       : "/images/vr-hero-showroom.png";
 
   const renderHeading = () => {
-    // Fully JSON-driven: titlePrefix is the plain lead-in, highlight is the
-    // gradient-emphasised phrase, titleSuffix (e.g. " in {city}") is the location line.
     const prefix = (hero.titlePrefix || "Virtual Showroom Development").trim();
     const highlight = (hero.highlight || "for Automotive Industry").trim();
     const location = (hero.titleSuffix || "in Noida").trim();
 
+    if (
+      prefix.toLowerCase().includes("virtual showroom") ||
+      highlight.toLowerCase().includes("automotive")
+    ) {
+      return (
+        <h1 className="text-[34px] sm:text-[48px] lg:text-[62px] font-extrabold tracking-[-1.5px] leading-[1.12] lg:leading-[70px] text-center lg:text-left mx-auto lg:mx-0">
+          <span className="text-[#F0F6FC]">Virtual Showroom</span>
+          <br />
+          <span className="bg-gradient-to-r from-[#F0F6FC] via-[#F0F6FC] via-50% to-[#C47BFF] bg-clip-text text-transparent font-extrabold">
+            Development for
+          </span>
+          <br />
+          <span className="text-[#F0F6FC]">Automotive Industry</span>
+          <br />
+          <span className="text-[#9DA5B5]">{location}</span>
+        </h1>
+      );
+    }
+
     return (
-      <h1 className="text-[34px] sm:text-[48px] lg:text-[62px] font-extrabold tracking-[-1.5px] text-white leading-[1.12] lg:leading-[70px] text-center lg:text-left mx-auto lg:mx-0">
+      <h1 className="text-[34px] sm:text-[48px] lg:text-[62px] font-extrabold tracking-[-1.5px] leading-[1.12] lg:leading-[70px] text-center lg:text-left mx-auto lg:mx-0">
         <span className="text-white">{prefix}</span>
         <br />
         <span className="bg-gradient-to-r from-[#FFFFFF] via-[#E2E8F0] via-60% to-[#C084FC] bg-clip-text text-transparent font-extrabold">
           {highlight}
         </span>
         <br />
-        <span className="text-white">{location}</span>
+        <span className="text-[#9DA5B5]">{location}</span>
       </h1>
     );
   };
@@ -37,7 +54,7 @@ export default function Hero({ hero }: { hero: HeroData }) {
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left z-10">
           {/* Chapter / Subtitle Badge */}
           <div className="mb-6 flex items-center justify-center lg:justify-start gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-[#94A3B8]">
-            <span className="h-2 w-2 rounded-full bg-[#C084FC] shadow-[0_0_8px_#C084FC]" />
+            <span className="h-2 w-2 rounded-full bg-[#C47BFF]" />
             <span>CHAPTER 01</span>
             <span className="h-[2px] w-12 rounded-full bg-gradient-to-r from-[#7382FF]/40 to-transparent inline-block" />
             <span>THE OPPORTUNITY</span>
